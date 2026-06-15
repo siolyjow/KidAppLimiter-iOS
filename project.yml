@@ -1,0 +1,32 @@
+name: KidAppLimiter
+options:
+  bundleIdPrefix: com.yourcompany
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: 0.1.0
+    SWIFT_VERSION: 5.9
+    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+targets:
+  KidAppLimiter:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources/KidAppLimiter
+        excludes:
+          - Resources
+          - KidAppLimiter.entitlements
+    resources:
+      - path: Sources/KidAppLimiter/Resources
+    entitlements:
+      path: Sources/KidAppLimiter/KidAppLimiter.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yourcompany.kidapplimiter
+        INFOPLIST_FILE: Sources/KidAppLimiter/Resources/Info.plist
+        PRODUCT_NAME: KidAppLimiter
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
